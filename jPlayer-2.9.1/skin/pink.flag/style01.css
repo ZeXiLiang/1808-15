@@ -345,7 +345,7 @@ div.jp-video .jp-progress {
 }
 
 .jp-seek-bar {
-	background: url("http://wp.yunxiu520.com/userfiles/01/style01.png") 0px -158px repeat-x;
+	background: url("http://wp.yunxiu520.com/userfiles/01/style01.png") -10px -158px repeat-x;
 	width:0px;
 	height: 100%;
 	overflow:hidden;
@@ -353,7 +353,7 @@ div.jp-video .jp-progress {
 }
 
 .jp-play-bar {
-	background: url("http://wp.yunxiu520.com/userfiles/01/style01.png") -10px -206px repeat-x;
+	background: url("http://wp.yunxiu520.com/userfiles/01/style01.png") -10px -106px repeat-x;
 	width:0px;
 	height: 100%;
 	overflow:hidden;
