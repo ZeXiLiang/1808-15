@@ -1,0 +1,766 @@
+/*
+ * Skin for jPlayer Plugin (jQuery JavaScript Library)
+ * http://www.jplayer.org
+ *
+ * Skin Name: Pink Flag
+ *
+ * Copyright (c) 2012 - 2014 Happyworm Ltd
+ * Licensed under the MIT license.
+ *  - http://www.opensource.org/licenses/mit-license.php
+ *
+ * Author: Silvia Benvenuti
+ * Skin Version: 2.1 (jPlayer 2.8.0)
+ * Date: 13th November 2014
+ */
+li,body,p,div,select,option{
+    margin: 0;
+    padding: 0;
+}
+.jp-audio *:focus,
+.jp-audio-stream *:focus,
+.jp-video *:focus {
+	/* Disable the browser focus highlighting. */
+	outline:none;
+    border: 0;
+}
+
+.jp-audio button::-moz-focus-inner,
+.jp-audio-stream button::-moz-focus-inner,
+.jp-video button::-moz-focus-inner {
+	/* Disable the browser CSS3 focus highlighting. */
+	border: 0;
+}
+
+.jp-audio,
+.jp-audio-stream,
+.jp-video {
+
+
+
+font: 14px/1.5 "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+    font-family: "Microsoft yahei" !important;
+    
+	line-height:1.6;
+	color: #fff;
+	
+	background:url("http://wp.yunxiu520.com/userfiles/01/imagedoc-darknoise.png");
+}
+select:hover {
+    background: #f60;
+}
+
+.jp-audio {
+	width:201px;
+	padding:20px;
+}
+
+.jp-audio-stream {
+	width:101px;
+	padding:20px 20px 10px 20px;
+}
+
+.jp-video-270p {
+	width:900px;
+    height:550px;
+}
+.jp-video-360p {
+
+}
+.jp-video-full {
+	/* Rules for IE6 (full-screen) */
+	width:480px;
+	height:270px;
+	/* Rules for IE7 (full-screen) - Otherwise the relative container causes other page items that are not position:static (default) to appear over the video/gui. */
+	position:static !important; position:relative;
+}
+
+/* The z-index rule is defined in this manner to enable Popcorn plugins that add overlays to video area. EG. Subtitles. */
+.jp-video-full div div {
+	z-index:9;
+}
+
+.jp-video-full .jp-jplayer {
+	top: 0;
+	left: 0;
+	position: fixed !important; position: relative; /* Rules for IE6 (full-screen) */
+	overflow: hidden;
+}
+
+.jp-video-full .jp-gui {
+	position: fixed !important; position: static; /* Rules for IE6 (full-screen) */
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	z-index:1001; /* 1 layer above the others. */
+}
+.jp-video-full .jp-interface {
+	position: absolute !important; position: relative; /* Rules for IE6 (full-screen) */
+	bottom: 0;
+	left: 0;
+    z-index: 10px;
+}
+
+.jp-interface {
+	position: absolute;
+	width:900px;
+    height: 34px;
+	background:#1b1b1b; /* Required for the full screen */
+}
+.jp-playlist {
+    height: 80px;
+}
+
+/* @group CONTROLS */
+
+.jp-video .jp-controls-holder {
+    float: left;
+	clear: both;
+	width:900px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+	overflow:hidden;
+}
+
+.jp-audio .jp-controls-holder {
+	height: 63px;
+}
+.jp-audio-stream .jp-controls-holder {
+	height: 50px;
+}
+
+.jp-controls {
+	background: url("jplayer.pink.flag.jpg") 0 0 no-repeat;
+	
+	overflow:hidden;
+	width: 80px;
+	height: 34px;
+}
+
+.jp-audio .jp-controls,
+.jp-audio-stream .jp-controls {
+	margin:0 auto;
+}
+
+.jp-audio-stream .jp-controls {
+	width: 100px;
+}
+
+.jp-video .jp-controls {
+	margin:0 0 0 100px;
+	float:left;
+	display:inline; /* need this to fix IE6 double margin */
+}
+
+.jp-controls button {
+	display:block;
+	float:left;
+	overflow:hidden;
+	text-indent:-9999px;
+	height: 34px;
+	
+	padding: 0;
+	border:none;
+	cursor: pointer;
+}
+
+/* @group single player controls */
+
+.jp-type-single .jp-controls button {
+	width: 99px;
+}
+
+.jp-type-single  .jp-play {
+	background: url("jplayer.pink.flag.jpg") 0px -40px no-repeat;
+}
+
+.jp-type-single  .jp-play:focus {
+	background: url("jplayer.pink.flag.jpg") -100px -40px no-repeat;
+}
+
+.jp-state-playing .jp-type-single  .jp-play {
+	background: url("jplayer.pink.flag.jpg") 0px -120px no-repeat;
+}
+
+.jp-state-playing .jp-type-single  .jp-play:focus {
+	background: url("jplayer.pink.flag.jpg") -100px -120px no-repeat;
+}
+
+/* The right border is normally in the ul background image. */
+.jp-audio-stream .jp-play,
+.jp-audio-stream .jp-pause {
+	border-right:1px solid #180920;
+}
+
+.jp-type-single .jp-stop {
+	background: url("jplayer.pink.flag.jpg") 0px -80px no-repeat;
+}
+
+.jp-type-single .jp-stop:focus {
+	background: url("jplayer.pink.flag.jpg") -100px -80px no-repeat;
+}
+
+/* @end */
+
+/* @group playlist player controls */
+
+.jp-type-playlist .jp-controls button {
+	width: 20px;
+}
+
+.jp-type-playlist .jp-play {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/playButton01.svg") no-repeat center;
+}
+
+
+
+.jp-state-playing div.jp-type-playlist .jp-play {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/pauseButton01.svg") no-repeat center;
+}
+.jp-state-playing div.jp-type-playlist .jp-play:hover {
+    background:url("http://wp.yunxiu520.com/userfiles/01/video/pauseButton.svg") no-repeat center;
+}
+
+.jp-type-playlist .jp-stop {
+	background: url("jplayer.pink.flag.jpg") no-repeat;
+     width: 0px;
+    
+}
+
+.jp-type-playlist .jp-stop:focus {
+	background: url("jplayer.pink.flag.jpg") -124px -80px no-repeat;
+}
+
+.jp-type-playlist .jp-previous {
+	position: relative;
+    
+    background: url("http://wp.yunxiu520.com/userfiles/01/video/hou.png") no-repeat center;
+     background-size: 22px 24px;
+    
+}
+.jp-type-playlist .jp-previous:hover {
+  background: url("http://wp.yunxiu520.com/userfiles/01/video/hou01.png") no-repeat center;
+    background-size: 22px 24px;
+}
+
+
+.jp-type-playlist .jp-next {
+    margin-left: -12px;
+	 background: url("http://wp.yunxiu520.com/userfiles/01/video/qian.png") no-repeat center;
+   background-size: 22px 24px;
+}
+.jp-type-playlist .jp-next:hover {
+   background: url("http://wp.yunxiu520.com/userfiles/01/video/qian01.png") no-repeat center;
+    background-size: 22px 24px;
+}
+
+
+/* @end */
+
+
+/* @group TOGGLES */
+
+.jp-toggles {
+	padding:0;
+	margin-right: 0px;
+	overflow:hidden;
+}
+
+.jp-audio .jp-toggles {
+	width:55px;
+}
+
+.jp-audio .jp-type-single .jp-toggles {
+	width:25px;
+}
+
+.jp-video .jp-toggles {
+	float: right;
+	width:105px;
+	height: 100px;
+    margin-right: 00px;
+    margin-top: -60px;
+}
+
+.jp-toggles button {
+	display:block;
+	float:right;
+	width:50px;
+	height:34px;
+	text-indent:-9999px;
+	line-height:100%; /* need this for IE6 */
+	border:none;
+	cursor: pointer;
+}
+
+.jp-full-screen {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/fullscreenEnterButton01.svg") no-repeat;
+	margin-left: 15px;
+}
+.jp-full-screen:hover {
+    background: url("http://wp.yunxiu520.com/userfiles/01/video/fullscreenEnterButton.svg") no-repeat;
+}
+
+.jp-state-full-screen .jp-full-screen {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/fullscreenExitButton01.svg") no-repeat;
+}
+.jp-state-full-screen .jp-full-screen:hover {
+    background: url("http://wp.yunxiu520.com/userfiles/01/video/fullscreenExitButton.svg") no-repeat;
+}
+
+.jp-repeat {
+	background: url("jplayer.pink.flag.jpg") 0 -440px no-repeat;
+	margin-left: 0;
+}
+.jp-repeat:focus {
+	background: url("jplayer.pink.flag.jpg") -30px -440px no-repeat;
+}
+.jp-state-looped .jp-repeat {
+	background: url("jplayer.pink.flag.jpg") -60px -440px no-repeat;
+}
+.jp-state-looped .jp-repeat:focus {
+	background: url("jplayer.pink.flag.jpg") -90px -440px no-repeat;
+}
+
+.jp-shuffle {
+	background: url("jplayer.pink.flag.jpg") 0 -460px no-repeat;
+	margin-left: 15px;
+}
+.jp-shuffle:focus {
+	background: url("jplayer.pink.flag.jpg") -30px -460px no-repeat;
+}
+.jp-state-shuffled .jp-shuffle {
+	background: url("jplayer.pink.flag.jpg") -60px -460px no-repeat;
+}
+.jp-state-shuffled .jp-shuffle:focus {
+	background: url("jplayer.pink.flag.jpg") -90px -460px no-repeat;
+}
+.jp-audio .jp-shuffle {
+	margin-left: 5px;
+}
+
+
+/* @end */
+
+/* @group progress bar */
+
+/* The seeking class is added/removed inside jPlayer */
+div.jp-seeking-bg {
+	background: url("jplayer.pink.flag.seeking.gif");
+}
+
+.jp-progress {
+	background: #535353;
+	width: 197px;
+	height: 4px;
+    margin-top: 16px;
+
+	overflow:hidden;
+}
+
+div.jp-video .jp-progress {
+    position: relative;
+	float: left;
+    margin-left: 200px;
+    z-index: 10;
+	width:200px;
+	background-image: none;
+	padding: 0;
+}
+.jp-playlist-item {
+    display: block;
+   
+   
+    
+}
+.jp-seek-bar {
+	background: #535353;
+	width:0px;
+	height: 100%;
+	overflow:hidden;
+	cursor:pointer;
+    z-index: 11;
+}
+
+.jp-play-bar {
+	background:#fff;
+	width:0px;
+	height: 100%;
+	overflow:hidden;
+    z-index: 12;
+}
+
+
+/* @end */
+
+/* @group volume controls */
+
+.jp-state-no-volume .jp-volume-controls {
+	display:none;
+}
+
+.jp-audio .jp-volume-controls,
+.jp-audio-stream .jp-volume-controls {
+	height:30px;
+}
+
+.jp-volume-controls button {
+	position: absolute;
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+	margin-top:0;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	border:none;
+	cursor: pointer;
+}
+
+.jp-audio .jp-volume-controls .jp-mute,
+.jp-audio-stream .jp-volume-controls .jp-mute {
+	top:-6px;
+	left: 0;
+}
+
+.jp-audio .jp-volume-controls .jp-volume-max,
+.jp-audio-stream .jp-volume-controls .jp-volume-max {
+	top:-6px;
+	right: 0;
+}
+
+.jp-volume-controls {
+    float: right;
+   margin-right: 200px;
+    overflow: hidden;
+    width: 100px;
+    height: 34px;
+}
+.jp-video .jp-volume-controls .jp-mute,
+.jp-video .jp-volume-controls .jp-unmute {
+	
+	top:8px;
+}
+
+.jp-video .jp-volume-controls .jp-volume-max {
+	left: 84px;
+	top:9999px;
+}
+
+.jp-volume-controls .jp-mute {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/audioUnmutedButton01.svg") no-repeat center;
+}
+
+.jp-volume-controls .jp-mute:hover {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/audioUnmutedButton.svg") no-repeat center;
+}
+
+.jp-state-muted .jp-volume-controls .jp-mute {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/audioUnmutedButton01.svg") -60px -330px no-repeat;
+}
+
+.jp-state-muted .jp-volume-controls .jp-mute:focus {
+	background: url("http://wp.yunxiu520.com/userfiles/01/video/audioMutedButton.svg")  no-repeat;
+}
+
+.jp-volume-controls .jp-volume-max {
+	background: url("http://wp.yunxiu520.com/userfiles/01/imagedoc-darknoise.png");
+}
+
+.jp-volume-controls .jp-volume-max:focus {
+	background: url("jplayer.pink.flag.jpg") -25px -350px no-repeat;
+}
+
+.jp-volume-bar {
+	background: #535353;
+	position: absolute;
+	width: 197px;
+	height: 4px;
+    margin-top: 15px;
+	margin-right: 210px;
+	overflow: hidden;
+	cursor:  pointer;
+}
+
+.jp-audio .jp-interface .jp-volume-bar,
+.jp-audio-stream .jp-interface .jp-volume-bar {
+	top:10px;
+	left: 0;
+}
+
+.jp-audio-stream .jp-interface .jp-volume-bar {
+	width: 97px;
+	border-right:1px solid #180920;
+	padding-right:1px;
+}
+
+.jp-video .jp-volume-bar {
+	top: 0;
+	right: 0;
+	width:60px;
+	
+}
+
+.jp-volume-bar-value {
+	background:#ccc;
+	height: 4px;
+}
+
+/* @end */
+select {
+     appearance:none;
+     -moz-appearance:none;
+     -webkit-appearance:none;
+    outline: none;
+    border: 0;
+    text-align: center;
+     font: 14px/1.5 "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+	color: #fff;
+    background: #9c9c9c;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+.model {
+    float: right;
+    position: relative;
+    right: 100px;
+    line-height: 34px;
+}
+option {
+   text-align: center;
+     font: 12px/1.5 "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+	color: #fff;
+    border: 0;
+    outline: 0;
+    background: #9c9c9c;
+    border-radius: 10px;
+}
+option:hover {
+    background: #f60;
+}
+
+/* @group current time and duration */
+P {
+    font: 12px/1.5 "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+	color: #929292;
+    margin: 0;
+    padding: 0;
+    line-height: 34px;
+}
+
+.jp-current-time, .jp-duration {
+	width:30px;
+font: 12px/1.5 "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB";
+	color: #929292;
+    font-weight: 580;
+}
+.jp-play:hover {
+    background: url("http://wp.yunxiu520.com/userfiles/01/video/playButton.svg") no-repeat center;
+}
+.jp-current-time {
+	float: left;
+	cursor: default;
+}
+.jp-duration:before {
+    content: "/";
+    color: #929292;
+    
+    margin-right: 3px;
+    vertical-align: top;
+}
+.jp-duration {
+    
+	float: left;
+	text-align:left;
+    margin-top: 8px;
+	cursor: pointer;
+}
+
+.jp-video .jp-current-time {
+    margin-top: 8px;
+	margin-right: 3px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.jp-video .jp-duration {
+	padding-right:20px;
+  
+}
+
+/* @end */
+
+/* @group playlist */
+
+.jp-details {
+	font-size:.7em;
+	margin:0;
+	padding:0;
+}
+.jp-details .jp-title {
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	text-align:center;
+	cursor: default;
+}
+
+.jp-video .jp-details {
+	margin: 0 90px 10px;
+}
+
+
+
+
+.jp-playlist ul {
+	list-style-type:none;	
+	font-size:12px;
+	margin: 0;
+	padding: 0;
+}
+
+.jp-video .jp-playlist ul {
+	margin: 0 0px;
+    position: relative;
+    top: 34px;
+}
+
+.jp-playlist li {
+	position: relative;
+    height: 20px;width: 100%;
+	overflow: hidden;
+}
+
+
+/* Note that the first-child (IE6) and last-child (IE6/7/8) selectors do not work on IE */
+
+
+
+
+div.jp-type-playlist div.jp-playlist a {
+	color: #fff;
+	text-decoration:none;
+    text-align: center;
+}
+
+
+
+div.jp-type-playlist div.jp-playlist li.jp-playlist-current {
+	background-color: #535353;
+	
+}
+
+div.jp-type-playlist div.jp-playlist li.jp-playlist-current a{
+	color: #fff;
+}
+
+div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove {
+	float:right;
+	display:inline;
+	text-align:right;
+	margin-left:10px;
+	font-weight:bold;
+	color:#8C7A99;
+}
+.back {
+    background: green;
+}
+div.jp-type-playlist div.jp-playlist a.jp-playlist-item-remove:hover {
+	color:#E892E9;
+}
+
+div.jp-type-playlist div.jp-playlist span.jp-free-media {
+	
+	display:none;
+	font-size: 0;
+	
+}
+
+div.jp-type-playlist div.jp-playlist span.jp-free-media a{
+	color:#8C7A99;
+}
+
+div.jp-type-playlist div.jp-playlist span.jp-free-media a:hover{
+	color:#E892E9;
+}
+span.jp-artist {
+	font-size:0;
+	color:#8C7A99;
+}
+
+/* @end */
+
+
+.jp-video .jp-video-play {
+	width:100%;
+	overflow:hidden; /* Important for nested negative margins to work in modern browsers */
+}
+.jp-video-270p .jp-video-play {
+	margin-top:-270px;
+	height:270px;
+}
+.jp-video-360p .jp-video-play {
+	margin-top:-360px;
+	height:360px;
+}
+.jp-video-full .jp-video-play {
+	height:100%;
+}
+.jp-video-play-icon {
+	position:relative;
+	display:block;
+	width: 112px;
+	height: 100px;
+
+	margin-left:-56px;
+	margin-top:-50px;
+	left:50%;
+	top:50%;
+
+	border:none;
+	cursor:pointer;
+
+	background: url("jplayer.pink.flag.video.play.png") 0 0 no-repeat;
+	text-indent:-9999px;
+}
+.jp-video-play-icon:focus {
+	background: url("jplayer.pink.flag.video.play.png") 0 -100px no-repeat;
+}
+
+
+.jp-jplayer audio,
+.jp-jplayer {
+	width:0px;
+	height:0px;
+}
+
+.jp-jplayer {
+	background-color: #000000;
+}
+
+/* @group NO SOLUTION error feedback */
+
+.jp-no-solution {
+	padding:5px;
+	font-size:.8em;
+	background-color:#3a2a45;
+	border-top:2px solid #554461;
+	border-left:2px solid #554461;
+	border-right:2px solid #180a1f;
+	border-bottom:2px solid #180a1f;
+	color:#FFF;
+	display:none;
+}
+
+.jp-no-solution a {
+	color:#FFF;
+}
+
+.jp-no-solution span {
+	font-size:1em;
+	display:block;
+	text-align:center;
+	font-weight:bold;
+}
+/* @end */
