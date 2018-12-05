@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<!-- Website Design By: www.happyworm.com -->
+<title>Demo : jPlayer as a video playlist player</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="http://wp.yunxiu520.com/userfiles/01/video/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://zexiliang.github.io/1808-15/jPlayer-2.9.1/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://wp.yunxiu520.com/userfiles/01/video/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="https://zexiliang.github.io/1808-15/jPlayer-2.9.1/dist/add-on/jplayer.playlist.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+	new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+		{
+			title:"凉凉",
+			artist:"Blender Foundation",
+			free:true,
+			m4v: "http://183.60.197.31/20/g/l/k/n/glkntqujtzlvqgjbyiddzwuspiywvd/hd.yinyuetai.com/1C600167357F8A567D67CBAECF8365DD.mp4?sc=ce85322c8ee277c7",
+			poster:"http://wp.yunxiu520.com/userfiles/01/video/beijing00.jpg"
+		},
+		{
+			title:"一去不回",
+			artist:"122",
+			m4v: "http://113.105.248.47/13/x/a/r/y/xaryzuhqlzsjxaweyteyfoseptksko/hd.yinyuetai.com/E0C5016729FD3218E693395DEE4C22C9.mp4?sc=6fc153b0731aac53",
+			
+			poster: "http://wp.yunxiu520.com/userfiles/01/video/beijing01.jpg"
+		},
+		{
+			title:"英雄本色",
+			artist:"Pixar",
+			m4v: "http://220.170.49.105:8080/10/b/u/c/y/bucywsilywvydzjwgockuwkmumwtgs/hd.yinyuetai.com/1DDD0165A222F59991E0288850643A9B.mp4?sc=c151a33f58d8c273",
+			
+			poster: "http://wp.yunxiu520.com/userfiles/01/video/beijing02.jpg"
+		}
+	], 
+                {
+         playlistOptions: {
+    autoPlay: true
+  },
+		swfPath: "../../dist/jplayer",
+		supplied: "webmv, ogv, m4v",
+		useStateClassSkin: true,
+		autoBlur: false,
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+
+});
+//]]>
+</script>
+  	
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <style>
+      .jp-jplayer {
+          
+             margin: 0 auto!important;
+        }
+        #jp_video_0 {
+            
+            margin: 0 auto!important;;
+        }
+   
+    </style>
+</head>
+<body>
+<div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+		<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+		<div class="jp-gui">
+			<div class="jp-video-play">
+				<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+			</div>
+			<div class="jp-interface">
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+				<div class="jp-details">
+					<div class="jp-title" aria-label="title">&nbsp;</div>
+				</div>
+				<div class="jp-controls-holder">
+					<div class="jp-volume-controls">
+						<button class="jp-mute" role="button" tabindex="0">mute</button>
+						<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+						<div class="jp-volume-bar">
+							<div class="jp-volume-bar-value"></div>
+						</div>
+					</div>
+					<div class="jp-controls">
+						<button class="jp-previous" role="button" tabindex="0">previous</button>
+						<button class="jp-play" role="button" tabindex="0">play</button>
+						<button class="jp-stop" role="button" tabindex="0">stop</button>
+						<button class="jp-next" role="button" tabindex="0">next</button>
+					</div>
+					<div class="jp-toggles">
+						<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+						<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+						<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+					</div>
+				</div>
+                <div class="model">
+    <span><select id="selRate">
+   
+    <option value="0.5">0.50</option>
+    <option value="0.75" selected>0.75</option>
+    <option value="1">1.00</option>
+    <option value="1.25">1.25</option>
+    <option value="1.5">1.50</option>
+     <option value="1.75">1.75</option>
+        <option value="2">2.00</option>
+     <option value="3">3.00</option>
+</select></span>
+    </div>
+			</div>
+		</div>
+		<div class="jp-playlist">
+			<ul>
+				<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+				<li></li>
+			</ul>
+		</div>
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+        
+    
+	</div>
+</div>
+    
+    <script>
+   $( function () {
+       
+  var eleSelect = document.getElementById('selRate');
+var eleButton = document.getElementById('btnPlay');
+// 视频元素
+var video = document.getElementById('jp_video_0');
+// 改变播放速率
+eleSelect.addEventListener('change', function () {
+    video.playbackRate = this.value;
+});
+// 点击播放按钮
+eleButton.addEventListener('click', function () {
+    video.play();
+});
+       
+   });
+    </script>
+</body>
+
+</html>
